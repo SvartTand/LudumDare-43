@@ -9,7 +9,7 @@ public class Health : MonoBehaviour {
     private float hp;
     [SerializeField] private Image hpBar;
     [SerializeField] private Text hpText;
-    [SerializeField] private Text sacrificeText;
+    
 
     public float maxSacrifices;
     private float sacrifices;
@@ -35,6 +35,6 @@ public class Health : MonoBehaviour {
     public void ChangeSac(float sacrifice)
     {
         sacrifices -= sacrifice;
-        sacrificeText.text = "Sacrifices left: " + sacrifices;
+       
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeteorScript : MonoBehaviour {
 
+    public GameObject explosion; 
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +21,10 @@ public class MeteorScript : MonoBehaviour {
         {
             collision.gameObject.GetComponent<Health>().ChangeHp(1);
         }
-
+        GameObject o = (GameObject)GameObject.Instantiate(explosion);
+        o.transform.position = collision.contacts[0].point;
+        //o.transform.position.Set(o.transform.position.x, 0, o.transform.position.y);
+        Destroy(o, 2);
         Destroy(gameObject);
 
 
