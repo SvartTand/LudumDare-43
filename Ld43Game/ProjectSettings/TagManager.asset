@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ClickPlane
+  - Enemy
+  - PlayerCollider
+  - Destructable
   layers:
   - Default
   - TransparentFX
