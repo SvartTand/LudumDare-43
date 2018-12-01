@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour {
 
     private Vector3 originalPos;
 
+
     void Start()
     {
         offsetPosition = transform.position - target.position;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour {
 
+    public GameObject explosion;
+
     //public float dmg;
 	// Use this for initialization
 	void Start () {
@@ -31,6 +33,10 @@ public class BulletCollision : MonoBehaviour {
             {
                 collision.gameObject.GetComponent<FlyingEnemy>().Damage(1);
             }
+
+            GameObject o = (GameObject)GameObject.Instantiate(explosion);
+            o.transform.position = transform.position;
+            Destroy(o, 1.5f);
             Destroy(gameObject);
         }
         
