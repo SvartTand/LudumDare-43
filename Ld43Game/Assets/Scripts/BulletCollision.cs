@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour {
 
+    //public float dmg;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,6 +26,10 @@ public class BulletCollision : MonoBehaviour {
             if(collision.gameObject.tag == "Destructable")
             {
                 collision.gameObject.GetComponent<DestructableScript>().Detonate(1);
+            }
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<FlyingEnemy>().Damage(1);
             }
             Destroy(gameObject);
         }

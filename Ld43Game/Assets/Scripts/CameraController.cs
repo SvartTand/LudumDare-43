@@ -17,6 +17,14 @@ public class CameraController : MonoBehaviour {
     [SerializeField]
     private bool lookAt = true;
 
+    private bool shake;
+
+    private float shakeDuration = 0;
+    private float shakeAmount = 0.7f;
+    private float decreaseFactor = 1;
+
+    private Vector3 originalPos;
+
     void Start()
     {
         offsetPosition = transform.position - target.position;
@@ -25,6 +33,16 @@ public class CameraController : MonoBehaviour {
     private void Update()
     {
         Refresh();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shake(0.9f, 0.1f, 1);
+        }
+
+        if (shake)
+        {
+            ShakeUpdate();
+        }
+        
     }
 
     public void Refresh()
@@ -55,6 +73,29 @@ public class CameraController : MonoBehaviour {
         {
             transform.rotation = target.rotation;
         }
+    }
+
+    private void ShakeUpdate()
+    {
+        originalPos = transform.localPosition;
+        if(shakeDuration > 0)
+        {
+            transform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+            shakeDuration -= Time.deltaTime * decreaseFactor;
+        }
+        else
+        {
+            shake = false;
+        }
+
+    }
+
+    public void Shake(float amount, float duration, float decrese)
+    {
+        shake = true;
+        shakeAmount = amount;
+        shakeDuration = duration;
+        decreaseFactor = decrese;
     }
 
 

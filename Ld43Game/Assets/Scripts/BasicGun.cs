@@ -24,19 +24,27 @@ public class BasicGun : MonoBehaviour {
 	void Update () {
         //Transform rot = turret;
         cooldown += Time.deltaTime;
-        RaycastHit hit;
+        RaycastHit[] hits;
         var ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        hits = Physics.RaycastAll(ray,100);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (hit.collider.tag != "Player")
+            RaycastHit hit = hits[i];
+
+            if (hit.collider.tag == "ClickPlane")
+            {
                 turret.LookAt(hit.point);
+                i = hits.Length;
+            }
+               
         }
             
 
         //turret.rotation = Quaternion.RotateTowards(turret.rotation, rot.rotation, rotDelta);
-        if(Input.GetMouseButtonDown(0) && cooldown >= RATE_OF_FIRE)
+        if(Input.GetMouseButton(0) && cooldown >= RATE_OF_FIRE)
         {
             cooldown = 0;
+            cam.GetComponent<CameraController>().Shake(0.2f, 0.2f, 1);
             Shoot();
         }
 

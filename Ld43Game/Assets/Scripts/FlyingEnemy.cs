@@ -25,7 +25,8 @@ public class FlyingEnemy : MonoBehaviour {
     //[SerializeField] private int scoreValue;
     //[SerializeField] private GameObject explosionParticles;
 
-    //Enter the Speed of the Bullet from the Component Inspector.
+    public Transform bulletEmitter;
+    public GameObject bullet;    
     public float Bullet_Forward_Force;
     [SerializeField] private float rotChangeInterval;
     private float time;
@@ -54,7 +55,7 @@ public class FlyingEnemy : MonoBehaviour {
         cooldown += Time.deltaTime;
         Vector3 relativePos;
         StraifeCooldown += Time.deltaTime;
-        Debug.Log(transform.position.y);
+        //Debug.Log(transform.position.y);
         if (transform.position.y <= lowestPoint)
         {
             relativePos = targetWhenNotChasing.position - transform.position;
@@ -97,15 +98,22 @@ public class FlyingEnemy : MonoBehaviour {
         if (Vector3.Distance(transform.position, Player.transform.position) <= MaxDist && cooldown >= AttackCooldown)
         {
 
-
+            Debug.Log("SHOOT");
             //SHOOT
-            //gun.Shoot();
+            GameObject shot = Instantiate(bullet, bulletEmitter.position, transform.rotation);
+            shot.GetComponent<Rigidbody>().AddForce(shot.transform.forward * Bullet_Forward_Force);
             cooldown = 0;
+            Destroy(shot, 5);
             //Player.GetComponent<PlayerHealth> ().takeDmg (-damage);
             //Destroy (gameObject);
         }
         previousLocation = transform;
         time += Time.deltaTime;
+    }
+
+    public void Damage(float dmg)
+    {
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider other)
