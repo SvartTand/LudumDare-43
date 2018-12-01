@@ -9,10 +9,15 @@ public class Health : MonoBehaviour {
     private float hp;
     [SerializeField] private Image hpBar;
     [SerializeField] private Text hpText;
+    [SerializeField] private Text sacrificeText;
+
+    public float maxSacrifices;
+    private float sacrifices;
 
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
+        sacrifices = maxSacrifices;
 	}
 	
 	// Update is called once per frame
@@ -25,5 +30,11 @@ public class Health : MonoBehaviour {
         hp -= dmg;
         hpBar.fillAmount = maxHp / hp;
         hpText.text = hp + "/" + maxHp;
+    }
+
+    public void ChangeSac(float sacrifice)
+    {
+        sacrifices -= sacrifice;
+        hpText.text = "Sacrifices left: " + sacrifices;
     }
 }
