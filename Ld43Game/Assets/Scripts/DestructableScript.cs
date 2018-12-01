@@ -7,8 +7,11 @@ public class DestructableScript : MonoBehaviour {
     // Use this for initialization
     [SerializeField] private float MaxHp;
     private float hp;
+    [SerializeField] private float sacValue;
 
-	void Start () {
+    [SerializeField] private GameObject explosion;
+
+   void Start () {
         hp = MaxHp;
     }
 	
@@ -32,6 +35,10 @@ public class DestructableScript : MonoBehaviour {
         if(hp<= 0)
         {
             GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Shake(0.2f, 0.5f, 1);
+            GameObject.FindWithTag("Player").GetComponent<Health>().ChangeSac(sacValue);
+            GameObject o = (GameObject) GameObject.Instantiate(explosion);
+            o.transform.position = transform.position;
+            Destroy(o, 5);
             Destroy(gameObject);
         }
         

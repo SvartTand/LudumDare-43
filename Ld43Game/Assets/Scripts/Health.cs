@@ -35,6 +35,6 @@ public class Health : MonoBehaviour {
     public void ChangeSac(float sacrifice)
     {
         sacrifices -= sacrifice;
-        hpText.text = "Sacrifices left: " + sacrifices;
+        sacrificeText.text = "Sacrifices left: " + sacrifices;
     }
 }

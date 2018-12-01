@@ -15,11 +15,4 @@ public class LookAtScript : MonoBehaviour {
         transform.LookAt(player);
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player" || other.tag == "Bullet")
-        {
-            Destroy(gameObject);
-        }
-    }
 }
