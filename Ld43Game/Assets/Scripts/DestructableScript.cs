@@ -10,10 +10,12 @@ public class DestructableScript : MonoBehaviour {
     [SerializeField] private float sacValue;
 
     [SerializeField] private GameObject explosion;
+    private GameObject god;
 
 
    void Start () {
         hp = MaxHp;
+        god = GameObject.FindGameObjectWithTag("God");
     }
 	
 	// Update is called once per frame
@@ -37,12 +39,22 @@ public class DestructableScript : MonoBehaviour {
         {
             GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Shake(0.2f, 0.5f, 1);
             GameObject.FindWithTag("Player").GetComponent<Health>().ChangeSac(sacValue);
-            GameObject.FindWithTag("God").GetComponent<MeteorSpawningSystem>().AddTime(sacValue);
+            god.GetComponent<MeteorSpawningSystem>().AddTime(sacValue);
+            god.GetComponent<DudeSpawnerSystem>().removeDude();
             GameObject o = (GameObject) GameObject.Instantiate(explosion);
             o.transform.position = transform.position;
             Destroy(o, 5);
             Destroy(gameObject);
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PlayerCollider")
+        {
+            Detonate(100);
+
+        }
     }
 }
