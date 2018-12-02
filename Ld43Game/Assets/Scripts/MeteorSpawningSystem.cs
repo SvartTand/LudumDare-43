@@ -90,4 +90,9 @@ public class MeteorSpawningSystem : MonoBehaviour {
         GameObject l = GameObject.Instantiate(lightning, new Vector3(Random.Range(-maxX, maxX), height*0.5f, Random.Range(-maxZ, maxZ)), transform.rotation);
         Destroy(l, 10f);
     }
+
+    public void AddTime(float time)
+    {
+        timeUntillUnhappy += time;
+    }
 }

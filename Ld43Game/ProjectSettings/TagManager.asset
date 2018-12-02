@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PlayerCollider
   - Destructable
+  - God
   layers:
   - Default
   - TransparentFX

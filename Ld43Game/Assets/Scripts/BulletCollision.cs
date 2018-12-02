@@ -31,7 +31,7 @@ public class BulletCollision : MonoBehaviour {
             }
             if (collision.gameObject.tag == "Enemy")
             {
-                collision.gameObject.GetComponent<FlyingEnemy>().Damage(1);
+                collision.gameObject.GetComponent<Damage>().Dmg(1);
             }
 
             GameObject o = (GameObject)GameObject.Instantiate(explosion);

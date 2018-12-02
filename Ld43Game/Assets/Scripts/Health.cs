@@ -28,7 +28,7 @@ public class Health : MonoBehaviour {
     public void ChangeHp(float dmg)
     {
         hp -= dmg;
-        hpBar.fillAmount = maxHp / hp;
+        hpBar.fillAmount = hp / maxHp;
         hpText.text = hp + "/" + maxHp;
     }
 

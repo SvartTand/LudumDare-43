@@ -11,6 +11,7 @@ public class DestructableScript : MonoBehaviour {
 
     [SerializeField] private GameObject explosion;
 
+
    void Start () {
         hp = MaxHp;
     }
@@ -36,6 +37,7 @@ public class DestructableScript : MonoBehaviour {
         {
             GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Shake(0.2f, 0.5f, 1);
             GameObject.FindWithTag("Player").GetComponent<Health>().ChangeSac(sacValue);
+            GameObject.FindWithTag("God").GetComponent<MeteorSpawningSystem>().AddTime(sacValue);
             GameObject o = (GameObject) GameObject.Instantiate(explosion);
             o.transform.position = transform.position;
             Destroy(o, 5);
