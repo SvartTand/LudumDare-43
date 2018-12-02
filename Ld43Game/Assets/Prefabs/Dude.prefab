@@ -66,8 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHp: 1
-  sacValue: 2
+  sacValue: 1
   explosion: {fileID: 1941117092483988, guid: d42dc59f992c06044834125b5d8bc71d, type: 2}
+  changeDirection: 5
+  speed: 4
 --- !u!212 &212049618260455066
 SpriteRenderer:
   m_ObjectHideFlags: 1

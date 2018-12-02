@@ -6,6 +6,8 @@ public class Damage : MonoBehaviour {
 
     [SerializeField] private float maxHp;
     private float hp;
+    public EnemySpawnerSystem spawnerSystem;
+    public bool turret = false;
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
@@ -21,6 +23,20 @@ public class Damage : MonoBehaviour {
         hp -= dmg;
         if(hp <= 0)
         {
+            Debug.Log(spawnerSystem);
+            try{
+                if (turret)
+                {
+                    spawnerSystem.KillTurret();
+                }
+                else
+                {
+                    spawnerSystem.KillEnemy();
+                }
+                
+            }
+            catch { }
+            
             Destroy(gameObject);
         }
         

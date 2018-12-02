@@ -30,6 +30,7 @@ public class MeteorSpawningSystem : MonoBehaviour {
     private float tot;
 
     [SerializeField] private Text sacrificeText;
+    [SerializeField] private Image imgBar;
 
     // Use this for initialization
     void Start () {
@@ -71,7 +72,9 @@ public class MeteorSpawningSystem : MonoBehaviour {
         }
         else
         {
-            sacrificeText.text = "Time until god is Unhappy: " + (int)timeUntillUnhappy;
+
+            sacrificeText.text = "Happiness: " + (int)timeUntillUnhappy;
+            imgBar.fillAmount = timeUntillUnhappy / timeUntillUnhappyMax;
         }
 
         

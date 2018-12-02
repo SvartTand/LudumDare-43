@@ -40,7 +40,7 @@ public class carController : MonoBehaviour {
     public void FixedUpdate()
     {
         float motor = 0;
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
         if (rb.velocity.magnitude <= maxSpeed)
         {
             motor = maxMotorTorque * Input.GetAxis("Vertical");

@@ -30,6 +30,11 @@ public class Health : MonoBehaviour {
         hp -= dmg;
         hpBar.fillAmount = hp / maxHp;
         hpText.text = hp + "/" + maxHp;
+
+        if(hp <= 0)
+        {
+            Debug.Log("GAME_Over");
+        }
     }
 
     public void ChangeSac(float sacrifice)

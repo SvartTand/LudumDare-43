@@ -13,6 +13,11 @@ public class LookAtScript : MonoBehaviour {
     [SerializeField] private GameObject explosion;
     private GameObject god;
 
+    public float changeDirection = 5;
+    public float speed = 4;
+    private float cooldown = 0;
+    private Vector3 destination;
+
     // Use this for initialization
     void Start () {
         hp = MaxHp;
@@ -23,6 +28,18 @@ public class LookAtScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.LookAt(player);
+        cooldown -= Time.deltaTime;
+
+        if (cooldown <= 0)
+        {
+            destination = new Vector3(Random.Range(-140, 140), transform.position.y, Random.Range(-140, 140));
+            cooldown = Random.Range(2, changeDirection);
+
+        }
+        transform.position = Vector3.MoveTowards(transform.position, destination, speed* Time.deltaTime);
+
+
+
 	}
 
     public void Detonate(float dmg)
