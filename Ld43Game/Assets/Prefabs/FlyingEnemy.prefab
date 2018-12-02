@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23680242470989538}
   - component: {fileID: 114296868290698720}
   - component: {fileID: 143866680935400646}
+  - component: {fileID: 114365540937016722}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -138,7 +139,20 @@ MonoBehaviour:
   bullet: {fileID: 1051086816975868, guid: 834c5a44994b87a4a9c9210663526c9a, type: 2}
   Bullet_Forward_Force: 800
   rotChangeInterval: 5
+  spawnerSystem: {fileID: 0}
   type: 0
+--- !u!114 &114365540937016722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283271437392750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2548b4dfc28b14e8ba069caa2e7206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 1
 --- !u!143 &143866680935400646
 CharacterController:
   m_ObjectHideFlags: 1

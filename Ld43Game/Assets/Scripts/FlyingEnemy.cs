@@ -33,6 +33,7 @@ public class FlyingEnemy : MonoBehaviour {
     private float rotationStep;
     private float StraifeCooldown = 5;
     private float STRAIF_RESET_TIME = 5;
+    public EnemySpawnerSystem spawnerSystem = null;
 
     public enum enemyType
     {
@@ -113,6 +114,14 @@ public class FlyingEnemy : MonoBehaviour {
 
     public void Damage(float dmg)
     {
+        try
+        {
+            spawnerSystem.KillEnemy();
+        }
+        catch
+        {
+
+        }
         Destroy(gameObject);
     }
 

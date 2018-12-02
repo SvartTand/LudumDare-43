@@ -27,11 +27,15 @@ public class BasicGun : MonoBehaviour {
         RaycastHit[] hits;
         var ray = cam.ScreenPointToRay(Input.mousePosition);
         hits = Physics.RaycastAll(ray,100);
+        if(hits.Length == 0)
+        {
+            turret.LookAt(ray.GetPoint(50));
+        }
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit hit = hits[i];
 
-            if (hit.collider.tag == "ClickPlane")
+            if (hit.collider.tag != "Player")
             {
                 turret.LookAt(hit.point);
                 i = hits.Length;

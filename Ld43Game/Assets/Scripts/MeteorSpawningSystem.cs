@@ -40,7 +40,7 @@ public class MeteorSpawningSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timeUntillUnhappy -= Time.deltaTime;
-        Debug.Log(lightningCooldown + ", " + meteorCooldown);
+        //Debug.Log(lightningCooldown + ", " + meteorCooldown);
 
         if(timeUntillUnhappy <= 0)
         {

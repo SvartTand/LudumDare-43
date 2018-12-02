@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212049618260455066}
   - component: {fileID: 65645806117718970}
   - component: {fileID: 114203060526084704}
-  - component: {fileID: 114268703807183640}
   m_Layer: 0
   m_Name: Dude
   m_TagString: Destructable
@@ -66,20 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84605681688099443a9f255f7168a22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114268703807183640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283879875444328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85797b8b21947944b9a59299b7c9af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   MaxHp: 1
-  sacValue: 3
-  explosion: {fileID: 1261934866188356, guid: 497f690ddb121204dbe6f2ad96ffb757, type: 2}
+  sacValue: 2
+  explosion: {fileID: 1941117092483988, guid: d42dc59f992c06044834125b5d8bc71d, type: 2}
 --- !u!212 &212049618260455066
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -48,12 +48,4 @@ public class DestructableScript : MonoBehaviour {
         }
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        Detonate(100);
-
-        
-    }
 }

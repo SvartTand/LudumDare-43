@@ -8,7 +8,7 @@ public class EnemyBulletCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Health>().ChangeHp(dmg);

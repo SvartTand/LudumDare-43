@@ -19,7 +19,7 @@ public class BulletCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "PlayerCollider")
+        if(collision.gameObject.tag == "Player")
         {
 
         }
