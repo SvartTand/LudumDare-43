@@ -51,10 +51,9 @@ public class DestructableScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PlayerCollider")
-        {
-            Detonate(100);
+        
+        Detonate(100);
 
-        }
+        
     }
 }
