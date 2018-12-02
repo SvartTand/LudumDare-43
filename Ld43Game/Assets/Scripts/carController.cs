@@ -8,6 +8,17 @@ public class carController : MonoBehaviour {
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
+    private Rigidbody rb;
+
+    public float maxSpeed;
+    public float boost;
+    public float torque;
+    public float breaks;
+
+    void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
 
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -28,8 +39,33 @@ public class carController : MonoBehaviour {
 
     public void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float motor = 0;
+        Debug.Log(rb.velocity.magnitude);
+        if (rb.velocity.magnitude <= maxSpeed)
+        {
+            motor = maxMotorTorque * Input.GetAxis("Vertical");
+            rb.AddForce(transform.forward * boost * Input.GetAxis("Vertical"));
+        }
+        else
+        {
+            
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            //rb.AddForce(transform.forward * boost);
+        }
+
+            if (Input.GetKey(KeyCode.Space))
+        {
+            rb.drag = breaks;
+        }
+        else
+        {
+            rb.drag = 0;
+        }
+
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        rb.AddTorque(transform.up * Input.GetAxis("Horizontal") * torque);
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -42,6 +78,7 @@ public class carController : MonoBehaviour {
             {
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
+
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);

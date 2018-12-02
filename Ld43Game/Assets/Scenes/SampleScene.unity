@@ -1517,6 +1517,53 @@ Prefab:
       propertyPath: hpText
       value: 
       objectReference: {fileID: 1162449150}
+    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: maxSteeringAngle
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 54969877961543836, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: maxMotorTorque
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: boost
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: torque
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: breaks
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542918884fd28384290ec743062f15a0, type: 2}
   m_IsPrefabAsset: 0
