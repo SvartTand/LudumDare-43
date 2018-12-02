@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawnerSystem : MonoBehaviour {
 
@@ -19,11 +20,14 @@ public class EnemySpawnerSystem : MonoBehaviour {
     [SerializeField] private float MIN_TIME;
     [SerializeField] private Transform[] spawnPoints;
 
-	// Use this for initialization
-	void Start () {
-        
-        
-	}
+    [SerializeField] private Text scoreText;
+    [SerializeField] private float score;
+
+    // Use this for initialization
+    void Start () {
+        scoreText.text = "Score: " + score;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,10 +61,14 @@ public class EnemySpawnerSystem : MonoBehaviour {
 
     public void KillEnemy()
     {
+        score++;
         enemyAmount--;
+        scoreText.text = "Score: " + score;
     }
     public void KillTurret()
     {
+        score++;
         turretAmount--;
+        scoreText.text = "Score: " + score;
     }
 }

@@ -42,9 +42,13 @@ public class DudeSpawnerSystem : MonoBehaviour {
         
         if(Random.value <= 0.3f)
         {
-            int r = Random.Range(0, audioComments.Length);
-            source.clip = audioComments[r];
-            source.Play();
+            if (!source.isPlaying)
+            {
+                int r = Random.Range(0, audioComments.Length);
+                source.clip = audioComments[r];
+                source.Play();
+            }
+            
 
 
         }

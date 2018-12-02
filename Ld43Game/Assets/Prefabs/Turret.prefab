@@ -198,7 +198,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114150446334213578
 MonoBehaviour:
@@ -211,9 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2548b4dfc28b14e8ba069caa2e7206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 2
+  maxHp: 1
   spawnerSystem: {fileID: 0}
   turret: 1
+  explosion: {fileID: 1261934866188356, guid: 497f690ddb121204dbe6f2ad96ffb757, type: 2}
 --- !u!114 &114405737047638974
 MonoBehaviour:
   m_ObjectHideFlags: 1

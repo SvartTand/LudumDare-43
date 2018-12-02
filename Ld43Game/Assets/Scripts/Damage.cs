@@ -8,6 +8,8 @@ public class Damage : MonoBehaviour {
     private float hp;
     public EnemySpawnerSystem spawnerSystem;
     public bool turret = false;
+
+    public GameObject explosion;
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
@@ -36,7 +38,9 @@ public class Damage : MonoBehaviour {
                 
             }
             catch { }
-            
+            GameObject o = (GameObject)GameObject.Instantiate(explosion);
+            o.transform.position = transform.position;
+            Destroy(o, 5);
             Destroy(gameObject);
         }
         

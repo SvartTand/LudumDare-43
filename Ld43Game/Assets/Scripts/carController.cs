@@ -14,6 +14,7 @@ public class carController : MonoBehaviour {
     public float boost;
     public float torque;
     public float breaks;
+    public AudioSource motorSound;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class carController : MonoBehaviour {
     {
         float motor = 0;
         //Debug.Log(rb.velocity.magnitude);
+        motorSound.pitch = 0.6f + rb.velocity.magnitude / maxSpeed;
         if (rb.velocity.magnitude <= maxSpeed)
         {
             motor = maxMotorTorque * Input.GetAxis("Vertical");

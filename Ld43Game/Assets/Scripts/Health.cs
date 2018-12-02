@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 
@@ -33,6 +34,7 @@ public class Health : MonoBehaviour {
 
         if(hp <= 0)
         {
+            SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
             Debug.Log("GAME_Over");
         }
     }

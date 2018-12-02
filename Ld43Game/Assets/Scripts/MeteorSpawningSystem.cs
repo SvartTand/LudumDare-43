@@ -32,6 +32,11 @@ public class MeteorSpawningSystem : MonoBehaviour {
     [SerializeField] private Text sacrificeText;
     [SerializeField] private Image imgBar;
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip dissapoint;
+
+    private bool played;
+
     // Use this for initialization
     void Start () {
         tot = 0;
@@ -45,6 +50,13 @@ public class MeteorSpawningSystem : MonoBehaviour {
 
         if(timeUntillUnhappy <= 0)
         {
+            if (!played && !source.isPlaying)
+            {
+                source.clip = dissapoint;
+                source.Play();
+                played = true;
+            }
+
             //Debug.Log("Unhappy");
             sacrificeText.text = "God is Unhappy!";
             if(meteorCooldown <= 0)
@@ -63,6 +75,7 @@ public class MeteorSpawningSystem : MonoBehaviour {
 
             if(tot == meteorAmount + lightningAmount)
             {
+                played = false;
                 timeUntillUnhappy = timeUntillUnhappyMax;
                 tot = 0;
             }
@@ -72,8 +85,8 @@ public class MeteorSpawningSystem : MonoBehaviour {
         }
         else
         {
-
-            sacrificeText.text = "Happiness: " + (int)timeUntillUnhappy;
+            
+            sacrificeText.text = "Satisfaction: " + (int)timeUntillUnhappy;
             imgBar.fillAmount = timeUntillUnhappy / timeUntillUnhappyMax;
         }
 
