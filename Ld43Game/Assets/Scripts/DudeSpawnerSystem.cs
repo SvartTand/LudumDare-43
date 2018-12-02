@@ -7,6 +7,9 @@ public class DudeSpawnerSystem : MonoBehaviour {
     [SerializeField] private GameObject[] dudeTypes;
     [SerializeField] private float maxDudes;
 
+    [SerializeField] private AudioClip[] audioComments;
+    [SerializeField] private AudioSource source;
+
     [SerializeField] private float maxX;
     [SerializeField] private float maxZ;
 
@@ -36,6 +39,15 @@ public class DudeSpawnerSystem : MonoBehaviour {
 
     public void removeDude()
     {
+        
+        if(Random.value <= 0.3f)
+        {
+            int r = Random.Range(0, audioComments.Length);
+            source.clip = audioComments[r];
+            source.Play();
+
+
+        }
         dudes--;
     }
 }
