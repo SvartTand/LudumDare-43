@@ -15,6 +15,8 @@ public class Health : MonoBehaviour {
     public float maxSacrifices;
     private float sacrifices;
 
+    public AudioSource hit;
+
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
@@ -31,12 +33,13 @@ public class Health : MonoBehaviour {
         hp -= dmg;
         hpBar.fillAmount = hp / maxHp;
         hpText.text = hp + "/" + maxHp;
-
-        if(hp <= 0)
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Shake(0.4f, 0.5f, 1);
+        if (hp <= 0)
         {
             SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
-            Debug.Log("GAME_Over");
+            //Debug.Log("GAME_Over");
         }
+        hit.Play();
     }
 
     public void ChangeSac(float sacrifice)

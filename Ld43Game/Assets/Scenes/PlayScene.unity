@@ -476,7 +476,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1509909203351336, guid: 542918884fd28384290ec743062f15a0,
     type: 2}
   m_PrefabInternal: {fileID: 178430318}
---- !u!82 &39619996
+--- !u!82 &39619997
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -485,11 +485,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ce14a912f4688c4997fd2527224da7e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a5f5cd13b4e75994da0882d83cd9d26f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -531,7 +531,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.509
+      value: 0.718
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2050,11 +2050,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114300137767395738, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 534669904}
     - target: {fileID: 114416888220162804, guid: 542918884fd28384290ec743062f15a0,
         type: 2}
       propertyPath: hpBar
@@ -2065,88 +2060,21 @@ Prefab:
       propertyPath: hpText
       value: 
       objectReference: {fileID: 1162449150}
-    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327349232024282, guid: 542918884fd28384290ec743062f15a0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: maxSteeringAngle
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 54969877961543836, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: maxSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: maxMotorTorque
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: boost
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: torque
-      value: 8000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: breaks
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 23739265100294742, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c023731504945b44dbbb6dfc96a2ff71, type: 2}
-    - target: {fileID: 23487559164910220, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c023731504945b44dbbb6dfc96a2ff71, type: 2}
-    - target: {fileID: 23690169644284108, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c023731504945b44dbbb6dfc96a2ff71, type: 2}
-    - target: {fileID: 23514393419464184, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c023731504945b44dbbb6dfc96a2ff71, type: 2}
-    - target: {fileID: 114362990844080680, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: motorSound
-      value: 
-      objectReference: {fileID: 39619996}
-    - target: {fileID: 114416888220162804, guid: 542918884fd28384290ec743062f15a0,
-        type: 2}
-      propertyPath: maxHp
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 114300137767395738, guid: 542918884fd28384290ec743062f15a0,
         type: 2}
-      propertyPath: RATE_OF_FIRE
-      value: 0.25
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 82906875748088998, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.721
       objectReference: {fileID: 0}
+    - target: {fileID: 114416888220162804, guid: 542918884fd28384290ec743062f15a0,
+        type: 2}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 39619997}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 542918884fd28384290ec743062f15a0, type: 2}
   m_IsPrefabAsset: 0
@@ -8474,7 +8402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyingEnemy: {fileID: 1283271437392750, guid: 1147c4427f145ac488c9b2e33095b440,
     type: 2}
-  maxEnemies: 4
+  maxEnemies: 6
   turret: {fileID: 1804948726308360, guid: de8d242e43ea1fd42a1539a9fd57a31e, type: 2}
   maxTurrets: 6
   turretY: 1
@@ -8763,14 +8691,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteor: {fileID: 1059152335450594, guid: 0eb8f0fc503abe04f8bd1f8f8395d29b, type: 2}
   lightning: {fileID: 1667865220681962, guid: 192c59dd0fd3d1640a99a9965e153228, type: 2}
-  meteorAmount: 200
-  lightningAmount: 200
+  meteorAmount: 100
+  lightningAmount: 100
   maxX: 140
   maxZ: 140
-  timeUntillUnhappyMax: 10
+  timeUntillUnhappyMax: 15
   height: 50
-  meteorInterval: 0.2
-  lightningInterval: 0.1
+  meteorInterval: 0.05
+  lightningInterval: 0.05
   sacrificeText: {fileID: 1418984630}
   imgBar: {fileID: 1808340066}
   source: {fileID: 872988297}

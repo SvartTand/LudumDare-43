@@ -109,6 +109,10 @@ public class MeteorSpawningSystem : MonoBehaviour {
 
     public void AddTime(float time)
     {
-        timeUntillUnhappy += time;
+        if (!played)
+        {
+            timeUntillUnhappy += time;
+        }
+        
     }
 }

@@ -40,6 +40,7 @@ public class Damage : MonoBehaviour {
             catch { }
             GameObject o = (GameObject)GameObject.Instantiate(explosion);
             o.transform.position = transform.position;
+            GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().Shake(0.2f, 0.5f, 1);
             Destroy(o, 5);
             Destroy(gameObject);
         }

@@ -21,10 +21,11 @@ public class EnemySpawnerSystem : MonoBehaviour {
     [SerializeField] private Transform[] spawnPoints;
 
     [SerializeField] private Text scoreText;
-    [SerializeField] private float score;
+    public static float score;
 
     // Use this for initialization
     void Start () {
+        score = 0;
         scoreText.text = "Score: " + score;
 
     }

@@ -25,10 +25,13 @@ public class CameraController : MonoBehaviour {
 
     private Vector3 originalPos;
 
+    //public Texture2D cursorTexture;
+
 
     void Start()
     {
         offsetPosition = transform.position - target.position;
+        //Cursor.SetCursor(cursorTexture,Vector2.zero,CursorMode.Auto);
     }
 
     private void Update()
